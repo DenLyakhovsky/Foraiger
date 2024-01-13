@@ -1,3 +1,6 @@
+install:
+	pip install requirements.txt
+
 run:
 	python3 manage.py runserver
 
