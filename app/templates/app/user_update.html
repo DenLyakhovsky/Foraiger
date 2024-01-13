@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Редагування профілю</div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Змінити</button>
+                    </form>
+
+                    <br>
+                    <br>
+                    <a href="{% url 'change_email' %}">Змінити пошту</a>
+                    <br>
+                    <br>
+
+                    <h4 class="mt-4">Зміна паролю</h4>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ password_change_form.as_p }}
+                        <button type="submit" class="btn btn-primary">Змінити пароль</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

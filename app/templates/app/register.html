@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Реєстрація
+{% endblock %}
+
+{% block content %}
+<div style="padding:50px">
+    <h1>Реєстрація</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Зареєструватись</button>
+    </form>
+    <br>
+
+    <div class="container mt-6">
+        <div class="row" style="justify-content: flex-start;">
+            <div class="col-md-6">
+                <div class="body">
+                    <a href="{% url 'login' %}">Увійти?</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'home' %}" style="margin-top: 20px">Повернутись на головну сторінку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

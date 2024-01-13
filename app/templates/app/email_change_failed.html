@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Failed
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <p>Помилка. Попробуйте ще раз</p>
+    <a href="{% url 'update' user.pk %}">Повернутись до профілю</a>
+</div>
+
+{% endblock %}

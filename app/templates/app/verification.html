@@ -1,0 +1,20 @@
+{% include 'base.html' %}
+
+{% block title %}
+Перевірка пошти
+{% endblock %}
+
+{% block content %}
+
+{% if not verification_done %}
+  <form method="post" action="{% url 'verification' %}">
+      {% csrf_token %}
+      <input type="hidden" name="email" value="{{ user.email }}">
+      <button type="submit">Перевірити пошту</button>
+  </form>
+{% else %}
+  <p>Електронна адреса перевірена.</p>
+{% endif %}
+
+
+{% endblock %}

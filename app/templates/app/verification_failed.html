@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Failed
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <p>Перевірка не виконана. Перевірте правильність електроної пошти</p>
+    <a href="{% url 'profile' %}">Повернутись до профілю</a>
+</div>
+
+{% endblock %}
